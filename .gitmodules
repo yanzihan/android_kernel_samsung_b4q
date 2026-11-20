@@ -1,0 +1,12 @@
+[submodule "kernel_platform/common"]
+	path = kernel_platform/common
+	url = git@github.com:yanzihan/android_kernel_samsung_sm8475.git
+	branch = seventeen-common
+[submodule "kernel_platform/msm-kernel"]
+	path = kernel_platform/msm-kernel
+	url = git@github.com:yanzihan/android_kernel_samsung_sm8475.git
+	branch = msm-kernel
+[submodule "external/AnyKernel3"]
+	path = external/AnyKernel3
+	url = https://github.com/xfwdrev/AnyKernel3.git
+	branch = b4q
