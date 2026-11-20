@@ -1,0 +1,5 @@
+out/
+dist*/
+_work*/
+*.log
+.gki_defconfig.build-backup
