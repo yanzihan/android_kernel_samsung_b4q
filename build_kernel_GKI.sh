@@ -15,6 +15,10 @@
 # ============================================================================
 
 export LTO=${LTO:-thin}
+# vendor blobs were written for a newer clang; keep clang 12 from turning
+# pointer-type warnings into hard errors
+KCFLAGS="${KCFLAGS:-} -Wno-incompatible-function-pointer-types -Wno-error"
+export KCFLAGS
 export TRIM_NONLISTED_KMI=${TRIM_NONLISTED_KMI:-0}
 export KMI_ENFORCED=${KMI_ENFORCED:-0}
 export KMI_SYMBOL_LIST_STRICT_MODE=${KMI_SYMBOL_LIST_STRICT_MODE:-0}
@@ -41,7 +45,7 @@ export DIST_DIR=${OUT_DIR}/dist
 mkdir -p "${DIST_DIR}"
 
 # reproducible-ish version info
-export KBUILD_BUILD_USER=${KBUILD_BUILD_USER:-yanzihan}
+export KBUILD_BUILD_USER=${KBUILD_BUILD_USER:-$(whoami)}
 export KBUILD_BUILD_HOST=${KBUILD_BUILD_HOST:-build-host}
 export KBUILD_BUILD_TIMESTAMP=${KBUILD_BUILD_TIMESTAMP:-$(date)}
 export KBUILD_BUILD_VERSION=${KBUILD_BUILD_VERSION:-1}
