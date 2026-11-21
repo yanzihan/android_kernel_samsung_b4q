@@ -588,6 +588,11 @@ def cmd_vendor_dlkm(args):
         run(['mkfs.f2fs', '-f', '-l', 'vendor_dlkm',
              '-O', 'extra_attr,compression', img, str(sectors)])
         run(['sload.f2fs', '-c', '-f', root, '-t', '/', img])
+        # sload.compressed images come out with a slightly inconsistent SIT;
+        # run fsck so the image is mountable by first-stage init.
+        for _ in range(2):
+            subprocess.run(['fsck.f2fs', '-f', img], check=False,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print(f'vendor_dlkm.img ({args.vendor_dlkm_fs}): {os.path.getsize(img)} bytes -> {img}')
 
 

@@ -1,6 +1,8 @@
 # Disable Werror
 CONFIG_WERROR=n
 
+# Disable Werror
+
 # Add LOCALVERSION
 CONFIG_LOCALVERSION="-YanJiaMian-gki"
 # CONFIG_LOCALVERSION_AUTO is not set
@@ -51,3 +53,4 @@ CONFIG_NOMOUNT=y
 # CONFIG_KDP_CRED is not set
 # CONFIG_KDP_NS is not set
 # CONFIG_KDP_TEST is not set
+
