@@ -56,3 +56,16 @@ adb reboot
 
 Requires a manager APK with UAPI 6 (KernelSU-Next CI build, e.g.
 `KernelSU_Next_v3.4.2-97-gcefb048b_33452` or newer).
+
+## KernelSU manager version
+
+The kernel is built from KernelSU-Next `aa235b99` and reports KSU version
+code **33554** (tag `v3.4.2`). The manager APK shipped with the ROM must be
+the matching CI build:
+
+    KernelSU_Next_v3.4.2-199-gaa235b99_33554-release.apk
+
+Older managers (e.g. the 33452 build) still work but the manager shows a
+"kernel version too old" notice. If the kernel source moves to another
+KernelSU-Next commit, regenerate the guess version and ship the manager
+build of the same commit.

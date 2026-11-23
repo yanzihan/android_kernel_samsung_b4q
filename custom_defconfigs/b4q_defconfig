@@ -54,3 +54,10 @@ CONFIG_NOMOUNT=y
 # CONFIG_KDP_NS is not set
 # CONFIG_KDP_TEST is not set
 
+# Samsung FIVE / PROCA file integrity: disable (kills gatekeeper under third-party recovery userland)
+# CONFIG_FIVE is not set
+# CONFIG_PROCA is not set
+
+# Samsung Knox kernel bits (NGKSM, KNOX_NCM) - off for custom kernel
+# CONFIG_NGKSM is not set
+# CONFIG_KNOX_NCM is not set
